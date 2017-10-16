@@ -1,9 +1,9 @@
-package com.thoughtworks.repository;
+package com.thoughtworks.service;
 
 import com.thoughtworks.entity.Customer;
 
 import java.util.List;
 
-public interface HibernateCustomerRepository {
+public interface CustomerService {
     List<Customer> findAll();
 }

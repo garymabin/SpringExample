@@ -5,7 +5,7 @@ import com.thoughtworks.entity.Customer;
 import java.util.Collections;
 import java.util.List;
 
-public class HibernateCustomerRepositoryImpl implements HibernateCustomerRepository {
+public class HibernateCustomerRepositoryImpl implements CustomerRepository {
     @Override
     public List<Customer> findAll() {
 //        List<Customer> customers = new ArrayList<>();
