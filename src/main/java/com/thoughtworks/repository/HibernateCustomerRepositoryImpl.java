@@ -2,9 +2,12 @@ package com.thoughtworks.repository;
 
 import com.thoughtworks.entity.Customer;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.Collections;
 import java.util.List;
 
+@Repository
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
     @Override
     public List<Customer> findAll() {
