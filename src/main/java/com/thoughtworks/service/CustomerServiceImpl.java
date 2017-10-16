@@ -2,12 +2,14 @@ package com.thoughtworks.service;
 
 import com.thoughtworks.entity.Customer;
 import com.thoughtworks.repository.CustomerRepository;
-import com.thoughtworks.repository.HibernateCustomerRepositoryImpl;
+
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class CustomerServiceImpl implements CustomerService {
-    private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
+    private CustomerRepository customerRepository;
 
     @Override
     public List<Customer> findAll() {
