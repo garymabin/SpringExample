@@ -4,7 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean name="customerRepository" class="com.thoughtworks.repository.HibernateCustomerRepositoryImpl"/>
-    <bean name="customerService" class="com.thoughtworks.service.CustomerServiceImpl">
-        <constructor-arg index="0" ref="customerRepository"/>
+    <bean name="customerService" class="com.thoughtworks.service.CustomerServiceImpl" autowire="constructor">
     </bean>
 </beans>
