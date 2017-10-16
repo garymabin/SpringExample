@@ -1,4 +1,4 @@
-package entity;
+package com.thoughtworks.entity;
 
 public class Car {
     private String id;

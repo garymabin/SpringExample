@@ -1,6 +1,7 @@
-package repository;
+package com.thoughtworks.repository;
 
-import entity.Car;
+import com.thoughtworks.entity.Car;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Connection;
