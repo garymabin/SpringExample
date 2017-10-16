@@ -5,6 +5,6 @@
 
     <bean name="customerRepository" class="com.thoughtworks.repository.HibernateCustomerRepositoryImpl"/>
     <bean name="customerService" class="com.thoughtworks.service.CustomerServiceImpl">
-        <property name="customerRepository" ref="customerRepository"/>
+        <constructor-arg index="0" ref="customerRepository"/>
     </bean>
 </beans>
