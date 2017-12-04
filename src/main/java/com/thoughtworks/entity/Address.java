@@ -18,11 +18,11 @@ import javax.persistence.Table;
 @Builder
 public class Address {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
-    @Column(name = "addr1", nullable = false)
+    @Column(name = "addr1")
     private String addr1;
 
     @Column(name = "addr2")

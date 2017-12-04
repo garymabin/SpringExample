@@ -65,11 +65,12 @@ public class AppConfig {
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("com.thoughtworks");
         factory.setDataSource(dataSource());
-        factory.afterPropertiesSet();
 
         factory.setJpaPropertyMap(new HashMap<String, String>() {{
             put("hibernate.hbm2ddl.auto", hibernateDdl);
         }});
+
+        factory.afterPropertiesSet();
 
         return factory.getObject();
     }
