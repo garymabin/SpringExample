@@ -1,5 +1,6 @@
 package com.thoughtworks;
 
+import com.thoughtworks.repository.CustomerRepository;
 import com.thoughtworks.service.CustomerService;
 
 import org.springframework.context.ApplicationContext;
@@ -13,5 +14,10 @@ public class Application {
         CustomerService customerService = applicationContext.getBean("customerService", CustomerService.class);
 
         System.out.println(customerService.findAll().get(0).getFirstName());
+
+        CustomerRepository customerRepository = applicationContext.getBean("customerRepository", CustomerRepository.class);
+
+
+        System.out.println(customerRepository.findCustomerByFirstName("Bob"));
     }
 }
