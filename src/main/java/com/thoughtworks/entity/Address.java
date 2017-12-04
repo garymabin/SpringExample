@@ -28,4 +28,7 @@ public class Address {
     @Column(name = "addr2")
     private String addr2;
 
+    @Column(name = "customer_id")
+    private Long customerId;
+
 }
