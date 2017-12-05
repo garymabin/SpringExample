@@ -20,9 +20,9 @@ import javax.persistence.Table;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "customer")
 public class Customer {
@@ -37,6 +37,7 @@ public class Customer {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "customer")
+    @OneToMany(cascade = CascadeType.ALL,
+        orphanRemoval = true, mappedBy = "customer")
     private List<Address> addresses;
 }

@@ -15,6 +15,9 @@ public interface HibernateJpaCustomerRepositoryImpl extends CustomerRepository, 
     @Query("select c from Customer c where c.firstName = :firstName")
     Customer findByFirstNameJPQL(@Param("firstName") String firstName);
 
+    @Query(value = "select * from customer c where c.first_name = :firstName", nativeQuery = true)
+    Customer findByFirstNameNative(@Param("firstName") String firstName);
+
     @Override
     default Customer findCustomerByFirstName(String firstName) {
         return this.findByFirstNameJPQL(firstName);

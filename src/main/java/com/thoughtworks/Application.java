@@ -2,7 +2,6 @@ package com.thoughtworks;
 
 import com.thoughtworks.entity.Address;
 import com.thoughtworks.entity.Customer;
-import com.thoughtworks.repository.CustomerRepository;
 import com.thoughtworks.service.CustomerService;
 
 import org.springframework.context.ApplicationContext;
@@ -24,19 +23,17 @@ public class Application {
         c.setAddresses(Arrays.asList(
             Address.builder()
                 .addr1("USA")
+                .customer(c)
                 .build(),
             Address.builder()
                 .addr1("China")
+                .customer(c)
                 .build(),
             Address.builder()
                 .addr1("Japan")
+                .customer(c)
                 .build()));
 
-        CustomerRepository customerRepository = applicationContext.getBean("customerRepository", CustomerRepository
-            .class);
-
-        customerRepository.save(c);
-
-        System.out.println(customerRepository.findCustomerByFirstName("Bob"));
+        customerService.saveCustomer(c);
     }
 }
